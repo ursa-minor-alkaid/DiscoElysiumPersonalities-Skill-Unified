@@ -11,8 +11,8 @@
       忽略 "—" 前后的空格；
     - 标记区去掉末尾的 "【...】"（如 【成功】）后，必须以某个人格名开头；
     - 被去掉的 "【...】" 标记会重新贴在内容前，因此内容保留 【成功】 等原标记；
-    - 每人格一个 .md 文件，文件内按 "含成功"（标记中含【成功】）与
-      "不含成功" 两节分类；
+    - 每人格一个 .md 文件（以英文名命名，见 ENGLISH_NAMES），文件内按
+      "含成功"（标记中含【成功】）与 "不含成功" 两节分类；
     - 新内容合并进已有文件的对应小节（旧内容在前、新内容在后），而非覆盖；
     - 无法匹配 24 人格的行会被丢弃。
 """
@@ -37,6 +37,34 @@ PERSONALITIES = [
 ]
 
 MARKER_RE = re.compile(r'((?:【[^】]*】)+)$')
+
+# 输出文件名（英文名；Windows 不允许文件名含 "/"，故 Hand/Eye 写成 Hand-Eye）
+ENGLISH_NAMES = {
+    "逻辑思维": "Logic",
+    "博学多闻": "Encyclopedia",
+    "能说会道": "Rhetoric",
+    "故弄玄虚": "Drama",
+    "标新立异": "Conceptualization",
+    "见微知著": "Visual Calculus",
+    "平心定气": "Volition",
+    "内陆帝国": "Inland Empire",
+    "通情达理": "Empathy",
+    "争强好胜": "Authority",
+    "同舟共济": "Esprit de Corps",
+    "循循善诱": "Suggestion",
+    "钢筋铁骨": "Endurance",
+    "坚忍不拔": "Pain Threshold",
+    "强身健体": "Physical Instrument",
+    "食髓知味": "Electrochemistry",
+    "天人感应": "Shivers",
+    "疑神疑鬼": "Half Light",
+    "眼明手巧": "Hand-Eye Coordination",
+    "五感发达": "Perception",
+    "反应速度": "Reaction Speed",
+    "鬼祟玲珑": "Savoir Faire",
+    "能工巧匠": "Interfacing",
+    "从容自若": "Composure",
+}
 
 
 def parse(line):
@@ -125,12 +153,13 @@ def main():
         nn = new_lines[name]['普通']
         if not ns and not nn:
             continue
-        filepath = os.path.join(output_dir, name + '.md')
+        en_name = ENGLISH_NAMES[name]
+        filepath = os.path.join(output_dir, en_name + '.md')
         old_success, old_normal = read_existing(filepath)
         success_lines = old_success + ns
         normal_lines = old_normal + nn
         write_sections(filepath, success_lines, normal_lines)
-        print(f'[{name}] +{len(ns)} 含成功 / +{len(nn)} 不含成功'
+        print(f'[{en_name}] +{len(ns)} 含成功 / +{len(nn)} 不含成功'
               f'（累计 {len(success_lines)} / {len(normal_lines)}）')
         appended += 1
 
