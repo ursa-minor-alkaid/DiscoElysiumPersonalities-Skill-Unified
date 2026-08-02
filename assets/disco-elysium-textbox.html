@@ -4,93 +4,141 @@
 <meta charset="UTF-8">
 <title>Disco Elysium Textbox</title>
 </head>
-<body style="margin:0; padding:48px; background:#0b0e0d; display:flex; justify-content:center;">
+<body style="margin:0; padding:48px; background:#0b0e0d; display:flex; flex-direction:column; align-items:center; gap:40px;">
 
 <!-- ============================================================
-     极乐迪斯科风格对话框组件（单个）
-     仅使用 3 种颜色，通过根元素上的 3 个变量控制，改色即换肤：
-       --de-bg      背景色（深汽油绿黑）
-       --de-text    文字色（骨白）
-       --de-accent  强调色（琥珀橙：技能名 / 引号 / 装饰）
-     其余色值全部由这三者经 color-mix 派生，替换变量即可。
+     极乐迪斯科风格对话框组件（四个色系展示）
+     与 SKILL.md 硬约束章节的模板保持一致。
+     配色规则：
+       背景统一   #0c0c0c
+       正文色     取 references 对应文件"参数信息"的 --de-text 值
+       强调色     取 references 对应文件"参数信息"的 --de-accent 值
+     下方依次展示：智力 INTELLECT / 精神 PSYCHE / 体格 PHYSIQUE / 身手 MOTORICS
+     注意：div 不保留任何视觉修饰（无背景/边框/阴影/圆角/渐变/绝对定位），仅保留文字排版。
      ============================================================ -->
 
-<div style="--de-bg:#101815; --de-text:#ece1c9; --de-accent:#d98a3d;
-            position:relative; box-sizing:border-box; width:400px; overflow:hidden;
+<!-- ============ 智力 INTELLECT ============ -->
+<h2 style="margin:0; font-family:Georgia,'Songti SC',serif; font-weight:normal;
+           font-size:18px; letter-spacing:0.3em; color:#ece1c9;">智力 · INTELLECT</h2>
+<p style="margin:6px 0 0; font-family:Georgia,serif; font-size:12px; letter-spacing:0.15em;
+          color:#ece1c9; opacity:0.6;">--de-text: #7b857a &nbsp;·&nbsp; --de-accent: #3a4a62</p>
+<div style="display:block; box-sizing:border-box;
+            width:100%; max-width:400px; margin:16px auto;
             padding:26px 28px 22px;
-            background:
-              repeating-linear-gradient(0deg, color-mix(in srgb, var(--de-text) 5%, transparent) 0 1px, transparent 1px 3px),
-              radial-gradient(120% 90% at 12% 0%, color-mix(in srgb, var(--de-accent) 14%, transparent) 0%, transparent 55%),
-              radial-gradient(130% 100% at 105% 110%, color-mix(in srgb, var(--de-text) 8%, transparent) 0%, transparent 50%),
-              linear-gradient(158deg, color-mix(in srgb, var(--de-bg) 82%, var(--de-text)) 0%, var(--de-bg) 42%, color-mix(in srgb, var(--de-bg) 72%, black) 100%);
-            border:1px solid color-mix(in srgb, var(--de-text) 20%, transparent);
-            border-left:4px solid var(--de-accent);
-            border-radius:2px 18px 3px 14px;
-            box-shadow:
-              0 0 0 4px color-mix(in srgb, var(--de-bg) 55%, transparent),
-              0 18px 44px color-mix(in srgb, var(--de-bg) 70%, transparent),
-              inset 0 0 60px color-mix(in srgb, var(--de-bg) 65%, transparent);
-            font-family:Georgia, 'Songti SC', 'SimSun', serif; color:var(--de-text);
-            line-height:1.8; letter-spacing:0.02em;">
+            font-family:Georgia,'Songti SC','SimSun',serif; color:#7b857a;
+            line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
 
-  <!-- 角部装饰：右上 -->
-  <div style="position:absolute; top:10px; right:10px; width:18px; height:18px;
-              border-top:1px solid color-mix(in srgb, var(--de-accent) 70%, transparent);
-              border-right:1px solid color-mix(in srgb, var(--de-accent) 70%, transparent);"></div>
-  <!-- 角部装饰：左下 -->
-  <div style="position:absolute; bottom:10px; left:12px; width:18px; height:18px;
-              border-bottom:1px solid color-mix(in srgb, var(--de-accent) 70%, transparent);
-              border-left:1px solid color-mix(in srgb, var(--de-accent) 70%, transparent);"></div>
-
-  <!-- 超大悬挂引号 -->
-  <div style="position:absolute; top:34px; left:14px; font-size:96px; line-height:1;
-              font-family:Georgia, serif; font-style:italic;
-              color:var(--de-accent); opacity:0.28;">“</div>
-
-  <!-- 头部：技能名 + 检定徽标 -->
-  <div style="display:flex; align-items:center; gap:10px; margin:0 0 16px;">
-    <span style="font-size:10px; color:var(--de-accent);">◆</span>
-    <span style="font-size:13px; font-weight:bold; letter-spacing:0.24em;
-                 color:var(--de-accent); white-space:nowrap;">内陆帝国</span>
-    <span style="flex:1; height:1px;
-                 background:linear-gradient(90deg, color-mix(in srgb, var(--de-accent) 60%, transparent), transparent);"></span>
-    <span style="font-size:11px; letter-spacing:0.12em; white-space:nowrap;
+  <div style="display:flex; align-items:center; gap:10px; margin:0 0 16px; font-family:'Palatino Linotype', Palatino, 'STKaiti', 'KaiTi', 'SimSun', serif;">
+    <span style="font-size:10px; color:#3a4a62;">◆</span>
+    <span style="font-size:15px; font-weight:bold; letter-spacing:0.24em;
+                 color:#3a4a62; white-space:nowrap;">内陆帝国</span>
+    <span style="font-size:13px; font-weight:bold; letter-spacing:0.12em; white-space:nowrap;
                  padding:3px 9px; border-radius:2px;
-                 color:var(--de-accent);
-                 border:1px solid color-mix(in srgb, var(--de-accent) 55%, transparent);
-                 background:color-mix(in srgb, var(--de-accent) 10%, transparent);">简单 · 成功</span>
+                 color:#3a4a62; border:1px solid #3a4a62;">简单 · 成功</span>
   </div>
 
-  <!-- 正文：斜体叙述（缩进避让引号） -->
-  <p style="margin:0 0 14px; padding-left:42px; font-size:15px; font-style:italic;
-            color:color-mix(in srgb, var(--de-text) 92%, transparent);">
-    霓虹在湿漉漉的柏油路上晕染开来，像一幅未干的油画。这座城市整夜未眠——它在对你低语。
+  <p style="margin:0; font-size:15px;">
+    【占位符：在此写入人格语音，1~3句话；<b>要求不同句子直接格式不能雷同！！</b>】
   </p>
 
-  <!-- 菱形分隔符 -->
-  <div style="display:flex; align-items:center; gap:8px; margin:0 0 14px; padding-left:42px;">
-    <span style="flex:1; height:1px;
-                 background:linear-gradient(90deg, transparent, color-mix(in srgb, var(--de-text) 30%, transparent));"></span>
-    <span style="font-size:8px; color:color-mix(in srgb, var(--de-accent) 80%, transparent);">◆ ◆ ◆</span>
-    <span style="flex:1; height:1px;
-                 background:linear-gradient(90deg, color-mix(in srgb, var(--de-text) 30%, transparent), transparent);"></span>
-  </div>
-
-  <!-- 正文：技能语音 -->
-  <p style="margin:0; padding-left:42px; font-size:15px;">
-    那不是风声。是某段被你遗忘的记忆，正一下一下，敲打着意识的门。
-  </p>
-
-  <!-- 底部签名行 -->
-  <div style="margin:18px 0 0; padding-top:12px; display:flex; align-items:center; gap:8px;
-              border-top:1px dashed color-mix(in srgb, var(--de-text) 18%, transparent);">
-    <span style="font-size:10px; letter-spacing:0.3em;
-                 color:color-mix(in srgb, var(--de-text) 55%, transparent);">REVACHOL&nbsp;·&nbsp;’51</span>
+  <div style="margin:18px 0 0; padding-top:12px; display:flex; align-items:center; gap:8px;">
+    <span style="font-size:12px; letter-spacing:0.3em; opacity:0.55; color:#7b857a;">REVACHOL&nbsp;·&nbsp;’51</span>
     <span style="flex:1;"></span>
-    <span style="font-size:10px; letter-spacing:0.3em;
-                 color:color-mix(in srgb, var(--de-accent) 75%, transparent);">INLAND&nbsp;EMPIRE</span>
+    <span style="font-size:12px; letter-spacing:0.3em; color:#3a4a62;">INLAND&nbsp;EMPIRE</span>
+  </div>
+</div>
+
+<!-- ============ 精神 PSYCHE ============ -->
+<h2 style="margin:0; font-family:Georgia,'Songti SC',serif; font-weight:normal;
+           font-size:18px; letter-spacing:0.3em; color:#ece1c9;">精神 · PSYCHE</h2>
+<p style="margin:6px 0 0; font-family:Georgia,serif; font-size:12px; letter-spacing:0.15em;
+          color:#ece1c9; opacity:0.6;">--de-text: #c7b7e7 &nbsp;·&nbsp; --de-accent: #221d39</p>
+<div style="display:block; box-sizing:border-box;
+            width:100%; max-width:400px; margin:16px auto;
+            padding:26px 28px 22px;
+            font-family:Georgia,'Songti SC','SimSun',serif; color:#c7b7e7;
+            line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
+
+  <div style="display:flex; align-items:center; gap:10px; margin:0 0 16px; font-family:'Palatino Linotype', Palatino, 'STKaiti', 'KaiTi', 'SimSun', serif;">
+    <span style="font-size:10px; color:#221d39;">◆</span>
+    <span style="font-size:15px; font-weight:bold; letter-spacing:0.24em;
+                 color:#221d39; white-space:nowrap;">内陆帝国</span>
+    <span style="font-size:13px; font-weight:bold; letter-spacing:0.12em; white-space:nowrap;
+                 padding:3px 9px; border-radius:2px;
+                 color:#221d39; border:1px solid #221d39;">简单 · 成功</span>
   </div>
 
+  <p style="margin:0; font-size:15px;">
+    【占位符：在此写入人格语音，一句话】
+  </p>
+
+  <div style="margin:18px 0 0; padding-top:12px; display:flex; align-items:center; gap:8px;">
+    <span style="font-size:12px; letter-spacing:0.3em; opacity:0.55; color:#c7b7e7;">REVACHOL&nbsp;·&nbsp;’51</span>
+    <span style="flex:1;"></span>
+    <span style="font-size:12px; letter-spacing:0.3em; color:#221d39;">INLAND&nbsp;EMPIRE</span>
+  </div>
+</div>
+
+<!-- ============ 体格 PHYSIQUE ============ -->
+<h2 style="margin:0; font-family:Georgia,'Songti SC',serif; font-weight:normal;
+           font-size:18px; letter-spacing:0.3em; color:#ece1c9;">体格 · PHYSIQUE</h2>
+<p style="margin:6px 0 0; font-family:Georgia,serif; font-size:12px; letter-spacing:0.15em;
+          color:#ece1c9; opacity:0.6;">--de-text: #b04045 &nbsp;·&nbsp; --de-accent: #7d2429</p>
+<div style="display:block; box-sizing:border-box;
+            width:100%; max-width:400px; margin:16px auto;
+            padding:26px 28px 22px;
+            font-family:Georgia,'Songti SC','SimSun',serif; color:#b04045;
+            line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
+
+  <div style="display:flex; align-items:center; gap:10px; margin:0 0 16px; font-family:'Palatino Linotype', Palatino, 'STKaiti', 'KaiTi', 'SimSun', serif;">
+    <span style="font-size:10px; color:#7d2429;">◆</span>
+    <span style="font-size:15px; font-weight:bold; letter-spacing:0.24em;
+                 color:#7d2429; white-space:nowrap;">内陆帝国</span>
+    <span style="font-size:13px; font-weight:bold; letter-spacing:0.12em; white-space:nowrap;
+                 padding:3px 9px; border-radius:2px;
+                 color:#7d2429; border:1px solid #7d2429;">简单 · 成功</span>
+  </div>
+
+  <p style="margin:0; font-size:15px;">
+    【占位符：在此写入人格语音，一句话】
+  </p>
+
+  <div style="margin:18px 0 0; padding-top:12px; display:flex; align-items:center; gap:8px;">
+    <span style="font-size:12px; letter-spacing:0.3em; opacity:0.55; color:#b04045;">REVACHOL&nbsp;·&nbsp;’51</span>
+    <span style="flex:1;"></span>
+    <span style="font-size:12px; letter-spacing:0.3em; color:#7d2429;">INLAND&nbsp;EMPIRE</span>
+  </div>
+</div>
+
+<!-- ============ 身手 MOTORICS ============ -->
+<h2 style="margin:0; font-family:Georgia,'Songti SC',serif; font-weight:normal;
+           font-size:18px; letter-spacing:0.3em; color:#ece1c9;">身手 · MOTORICS</h2>
+<p style="margin:6px 0 0; font-family:Georgia,serif; font-size:12px; letter-spacing:0.15em;
+          color:#ece1c9; opacity:0.6;">--de-text: #c2a435 &nbsp;·&nbsp; --de-accent: #b69a46</p>
+<div style="display:block; box-sizing:border-box;
+            width:100%; max-width:400px; margin:16px auto;
+            padding:26px 28px 22px;
+            font-family:Georgia,'Songti SC','SimSun',serif; color:#c2a435;
+            line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
+
+  <div style="display:flex; align-items:center; gap:10px; margin:0 0 16px; font-family:'Palatino Linotype', Palatino, 'STKaiti', 'KaiTi', 'SimSun', serif;">
+    <span style="font-size:10px; color:#b69a46;">◆</span>
+    <span style="font-size:15px; font-weight:bold; letter-spacing:0.24em;
+                 color:#b69a46; white-space:nowrap;">内陆帝国</span>
+    <span style="font-size:13px; font-weight:bold; letter-spacing:0.12em; white-space:nowrap;
+                 padding:3px 9px; border-radius:2px;
+                 color:#b69a46; border:1px solid #b69a46;">简单 · 成功</span>
+  </div>
+
+  <p style="margin:0; font-size:15px;">
+    【占位符：在此写入人格语音，一句话】
+  </p>
+
+  <div style="margin:18px 0 0; padding-top:12px; display:flex; align-items:center; gap:8px;">
+    <span style="font-size:12px; letter-spacing:0.3em; opacity:0.55; color:#c2a435;">REVACHOL&nbsp;·&nbsp;’51</span>
+    <span style="flex:1;"></span>
+    <span style="font-size:12px; letter-spacing:0.3em; color:#b69a46;">INLAND&nbsp;EMPIRE</span>
+  </div>
 </div>
 
 </body>
