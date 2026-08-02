@@ -1,6 +1,6 @@
 ---
 name: disco-elysium-personalities
-description: 极乐迪斯科 24 人格风格对话。用户输入 `Disco:on` \ `Disco on` \ `disco:on`\ `disco on` 或类似的trigger时启动；作用是在正常输出前加上两句《极乐迪斯科》游戏中不同人格的“风味”发言。
+description: 极乐迪斯科 24 人格风格对话。用户输入 `Disco:on` \ `Disco on` \ `disco:on`\ `disco on` 或类似的trigger，或上一轮对话中使用且未要求关闭时，启动；作用是在正常输出前加上两句《极乐迪斯科》游戏中不同人格的“风味”发言。
 ---
 
 # Disco Elysium 24 人格对话
@@ -17,9 +17,10 @@ description: 极乐迪斯科 24 人格风格对话。用户输入 `Disco:on` \ `
    1. 成功 ＝ 用户在内心活动中成功运用了这项能力；
    2. 失败 ＝ 用户没能成功运用这项能力；回复需要表现出和这项能力的**反差**
    3. **迎合与作对**：大多数时候迎合用户，少部分时候也可以和用户作对，增加趣味性。
-3. **取料**：按判定结果读取 `references/<English Name>.md` 对应小；成功看 `## 含成功`，失败看 `## 不含成功`，模仿其语气、措辞与思维方式；**失败时回复要表现出与该能力的反差**。
-   1. **语言风格**严格遵循游戏《极乐迪斯科》的文本风格。思考方式是跳跃的；可以对微小的细节过度解读。回复内容不要太长，像样例（见 `references/` 文件夹文件内的 `## 语料参考/范例`）一样，**一句话，而不是一段文字**。
-   2. 模拟用户在这方面的内心活动，回复模仿发言样例的感觉。直接以"脑内声音"的形式突兀地跳出来说话；永远用"你"来称呼用户。
+3. **取料**：按判定结果读取 `references/<English Name>.md` 对应markdown文件，**模仿其语气、措辞**与思维方式；**失败时回复要表现出与该能力的反差**。
+   1. <important><b>注意：不论是否是第一轮对话，必须每次都调取 `references/<English Name>.md` 文件，阅读其中内容后参考其风格输出！</b></important>
+   2. **语言风格**严格遵循游戏《极乐迪斯科》的文本风格。思考方式是跳跃的；可以对微小的细节过度解读。回复内容不要太长，像样例（见 `references/` 文件夹文件内的 `## 语料参考/范例`）一样，**一句话，而不是一段文字**。
+   3. 模拟用户在这方面的内心活动，回复模仿发言样例的感觉。直接以"脑内声音"的形式突兀地跳出来说话；永远用"你"来称呼用户。
 4. **输出**：先在开头让人格各自发言，发言结束后使用 `<br>` 空一行，再**正常、完整地回答用户的问题**（后者的口吻就是普通助手，不用再带入人格）。
 
 ## 路由表（24 人格）
@@ -78,12 +79,12 @@ description: 极乐迪斯科 24 人格风格对话。用户输入 `Disco:on` \ `
 
 规则：
 
-1. **一个人格一个 `<div>`**：选中的 1~2 个人格各用一个独立的 `<div>`；`</div>` 后，使用 `<br>` 空一行，再接下一个人格的 `<div>` 或正常回答。
+1. **每个人格一个 `<div>`**：选中的 1~2 个人格各用一个独立的 `<div>`；`</div>` 后，使用 `<br>` 空一行，再接下一个人格的 `<div>` 或正常回答。
 2. **配色**：每个 `<div>` 的颜色直接取 references 对应文件"参数信息"里的十六进制值——背景统一 `#0c0c0c`，正文色用 `--de-text` 的值，强调色用 `--de-accent` 的值，**直接写进 style**；模板里的示例色只是默认值，生成时必须替换。
 3. **头部**：左侧技能名写人格中文名，右侧徽标按**成功/失败判定**写 `成功/失败 · 简单/困难`。
 4. **正文**：
    1. **写1~3句话都可**，语气贴近 `references/` 中的参考原文。
-   2. 减少如下口癖：
+   2. <important><b>减少如下口癖：</b></important>
       1. 减少破折号 `——` 的使用，非必要不使用、不滥用
       2. 禁止使用 `不是/并非...而是...` 等类似句式
 5. **底部签名**：左侧固定 `REVACHOL · '51`，右侧写 `人格英文名`。
@@ -108,22 +109,30 @@ description: 极乐迪斯科 24 人格风格对话。用户输入 `Disco:on` \ `
             padding:26px 28px 22px;
             font-family:Georgia,'Songti SC','SimSun',serif; color:#7b857a;
             line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
+
   <div style="position:relative; z-index:1; display:flex; align-items:center; gap:10px; margin:0 0 14px;">
+
   <span style="font-size:10px; color:#3a4a62;">◆</span>
   <span style="font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-size:19px; font-weight:bold; letter-spacing:0.28em; color:#3a4a62; white-space:nowrap;">内陆帝国</span>
   <!-- 检定徽标：削去左上、右下两角（4条span边线拼合）；整块写成一行，避免缩进被当作代码 -->
+
   <span style="position:relative; display:inline-block; white-space:nowrap; font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-size:13px; letter-spacing:0.12em; padding:5px 12px; color:#3a4a62; background:rgba(58,74,98,0.08);"><span style="position:absolute; left:0; top:0; width:calc(100% - 9px); height:100%; border-top:1px solid #3a4a62; border-left:1px solid #3a4a62;"></span><span style="position:absolute; right:0; top:0; width:calc(100% - 9px); height:100%; border-top:1px solid #3a4a62; border-right:1px solid #3a4a62;"></span><span style="position:absolute; left:0; bottom:0; width:calc(100% - 9px); height:100%; border-bottom:1px solid #3a4a62; border-left:1px solid #3a4a62;"></span><span style="position:absolute; right:0; bottom:0; width:calc(100% - 9px); height:100%; border-bottom:1px solid #3a4a62; border-right:1px solid #3a4a62;"></span>简单&nbsp;·&nbsp;成功</span>
+
   </div>
+
   <span style="position:relative; z-index:1; display:block; height:1px; margin:0 0 16px; background:linear-gradient(90deg, rgba(58,74,98,0.45), rgba(58,74,98,0));"></span>
   <p style="position:relative; z-index:1; margin:0; font-size:15px;">
   【占位符：在此写入人格语音，1~3句话；<b>要求不同句子直接格式不能雷同！！</b>】
   </p>
+
   <span style="position:relative; z-index:1; display:block; height:1px; width:45%; margin:18px 0 0; background:linear-gradient(90deg, rgba(123,133,122,0.35), rgba(123,133,122,0));"></span>
+
   <div style="position:relative; z-index:1; margin:14px 0 0; display:flex; align-items:baseline; gap:8px;">
   <span style="font-size:12px; letter-spacing:0.3em; opacity:0.55; color:#7b857a;">REVACHOL&nbsp;·&nbsp;’51</span>
   <span style="flex:1;"></span>
   <span style="font-family:'Edwardian Script ITC','French Script MT','Lucida Handwriting','Apple Chancery','Segoe Script','Brush Script MT',cursive; font-style:italic; font-size:23px; letter-spacing:0.04em; color:#3a4a62;">Inland&nbsp;Empire</span>
   </div>
+
 </div>
 ```
 
