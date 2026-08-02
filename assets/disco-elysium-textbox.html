@@ -4,140 +4,162 @@
 <meta charset="UTF-8">
 <title>Disco Elysium Textbox</title>
 </head>
-<body style="margin:0; padding:48px; background:#0b0e0d; display:flex; flex-direction:column; align-items:center; gap:40px;">
+<body style="margin:0; padding:48px; display:flex; flex-direction:column; align-items:center; gap:40px;">
 
 <!-- ============================================================
      极乐迪斯科风格对话框组件（四个色系展示）
      与 SKILL.md 硬约束章节的模板保持一致。
      配色规则：
-       背景统一   #0c0c0c
+       背景统一   页面背景已由使用者移除（透明）
        正文色     取 references 对应文件"参数信息"的 --de-text 值
        强调色     取 references 对应文件"参数信息"的 --de-accent 值
      下方依次展示：智力 INTELLECT / 精神 PSYCHE / 体格 PHYSIQUE / 身手 MOTORICS
-     注意：div 不保留任何视觉修饰（无背景/边框/阴影/圆角/渐变/绝对定位），仅保留文字排版。
+     注意：div 不保留任何视觉修饰（无背景/边框/阴影/圆角/渐变），
+           一切修饰（发丝线、水印、削角边框）均由 span 承担。
      ============================================================ -->
 
 <!-- ============ 智力 INTELLECT ============ -->
-<h2 style="margin:0; font-family:Georgia,'Songti SC',serif; font-weight:normal;
-           font-size:18px; letter-spacing:0.3em; color:#ece1c9;">智力 · INTELLECT</h2>
+<h2 style="margin:0; font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-weight:normal;
+           font-size:18px; letter-spacing:0.3em; color:#8a8272;">智力 · INTELLECT</h2>
 <p style="margin:6px 0 0; font-family:Georgia,serif; font-size:12px; letter-spacing:0.15em;
-          color:#ece1c9; opacity:0.6;">--de-text: #7b857a &nbsp;·&nbsp; --de-accent: #3a4a62</p>
-<div style="display:block; box-sizing:border-box;
+          color:#a39c8d;">--de-text: #7b857a &nbsp;·&nbsp; --de-accent: #3a4a62</p>
+<div style="display:block; box-sizing:border-box; position:relative;
             width:100%; max-width:400px; margin:16px auto;
             padding:26px 28px 22px;
             font-family:Georgia,'Songti SC','SimSun',serif; color:#7b857a;
             line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
 
-  <div style="display:flex; align-items:center; gap:10px; margin:0 0 16px; font-family:'Palatino Linotype', Palatino, 'STKaiti', 'KaiTi', 'SimSun', serif;">
+  <div style="position:relative; z-index:1; display:flex; align-items:center; gap:10px; margin:0 0 14px;">
     <span style="font-size:10px; color:#3a4a62;">◆</span>
-    <span style="font-size:15px; font-weight:bold; letter-spacing:0.24em;
+    <span style="font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif;
+                 font-size:19px; font-weight:bold; letter-spacing:0.28em;
                  color:#3a4a62; white-space:nowrap;">内陆帝国</span>
-    <span style="font-size:13px; font-weight:bold; letter-spacing:0.12em; white-space:nowrap;
-                 padding:3px 9px; border-radius:2px;
-                 color:#3a4a62; border:1px solid #3a4a62;">简单 · 成功</span>
-  </div>
 
-  <p style="margin:0; font-size:15px;">
+    <!-- 检定徽标：削去左上、右下两角（4条span边线拼合）；整块写成一行，避免缩进被当作代码 -->
+    <span style="position:relative; display:inline-block; white-space:nowrap; font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-size:13px; letter-spacing:0.12em; padding:5px 12px; color:#3a4a62; background:rgba(58,74,98,0.08);"><span style="position:absolute; left:0; top:0; width:calc(100% - 9px); height:100%; border-top:1px solid #3a4a62; border-left:1px solid #3a4a62;"></span><span style="position:absolute; right:0; top:0; width:calc(100% - 9px); height:100%; border-top:1px solid #3a4a62; border-right:1px solid #3a4a62;"></span><span style="position:absolute; left:0; bottom:0; width:calc(100% - 9px); height:100%; border-bottom:1px solid #3a4a62; border-left:1px solid #3a4a62;"></span><span style="position:absolute; right:0; bottom:0; width:calc(100% - 9px); height:100%; border-bottom:1px solid #3a4a62; border-right:1px solid #3a4a62;"></span>简单&nbsp;·&nbsp;成功</span>
+  </div>
+  <span style="position:relative; z-index:1; display:block; height:1px; margin:0 0 16px;
+               background:linear-gradient(90deg, rgba(58,74,98,0.45), rgba(58,74,98,0));"></span>
+
+  <p style="position:relative; z-index:1; margin:0; font-size:15px;">
     【占位符：在此写入人格语音，1~3句话；<b>要求不同句子直接格式不能雷同！！</b>】
   </p>
 
-  <div style="margin:18px 0 0; padding-top:12px; display:flex; align-items:center; gap:8px;">
+  <span style="position:relative; z-index:1; display:block; height:1px; width:45%; margin:18px 0 0;
+               background:linear-gradient(90deg, rgba(123,133,122,0.35), rgba(123,133,122,0));"></span>
+  <div style="position:relative; z-index:1; margin:14px 0 0; display:flex; align-items:baseline; gap:8px;">
     <span style="font-size:12px; letter-spacing:0.3em; opacity:0.55; color:#7b857a;">REVACHOL&nbsp;·&nbsp;’51</span>
     <span style="flex:1;"></span>
-    <span style="font-size:12px; letter-spacing:0.3em; color:#3a4a62;">INLAND&nbsp;EMPIRE</span>
+    <span style="font-family:'Edwardian Script ITC','French Script MT','Lucida Handwriting','Apple Chancery','Segoe Script','Brush Script MT',cursive;
+                 font-style:italic; font-size:23px; letter-spacing:0.04em; color:#3a4a62;">Inland&nbsp;Empire</span>
   </div>
 </div>
 
 <!-- ============ 精神 PSYCHE ============ -->
-<h2 style="margin:0; font-family:Georgia,'Songti SC',serif; font-weight:normal;
-           font-size:18px; letter-spacing:0.3em; color:#ece1c9;">精神 · PSYCHE</h2>
+<h2 style="margin:0; font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-weight:normal;
+           font-size:18px; letter-spacing:0.3em; color:#8a8272;">精神 · PSYCHE</h2>
 <p style="margin:6px 0 0; font-family:Georgia,serif; font-size:12px; letter-spacing:0.15em;
-          color:#ece1c9; opacity:0.6;">--de-text: #c7b7e7 &nbsp;·&nbsp; --de-accent: #221d39</p>
-<div style="display:block; box-sizing:border-box;
+          color:#a39c8d;">--de-text: #c7b7e7 &nbsp;·&nbsp; --de-accent: #221d39</p>
+<div style="display:block; box-sizing:border-box; position:relative;
             width:100%; max-width:400px; margin:16px auto;
             padding:26px 28px 22px;
             font-family:Georgia,'Songti SC','SimSun',serif; color:#c7b7e7;
             line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
 
-  <div style="display:flex; align-items:center; gap:10px; margin:0 0 16px; font-family:'Palatino Linotype', Palatino, 'STKaiti', 'KaiTi', 'SimSun', serif;">
+  <div style="position:relative; z-index:1; display:flex; align-items:center; gap:10px; margin:0 0 14px;">
     <span style="font-size:10px; color:#221d39;">◆</span>
-    <span style="font-size:15px; font-weight:bold; letter-spacing:0.24em;
+    <span style="font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif;
+                 font-size:19px; font-weight:bold; letter-spacing:0.28em;
                  color:#221d39; white-space:nowrap;">内陆帝国</span>
-    <span style="font-size:13px; font-weight:bold; letter-spacing:0.12em; white-space:nowrap;
-                 padding:3px 9px; border-radius:2px;
-                 color:#221d39; border:1px solid #221d39;">简单 · 成功</span>
-  </div>
 
-  <p style="margin:0; font-size:15px;">
+    <span style="position:relative; display:inline-block; white-space:nowrap; font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-size:13px; letter-spacing:0.12em; padding:5px 12px; color:#221d39; background:rgba(34,29,57,0.08);"><span style="position:absolute; left:0; top:0; width:calc(100% - 9px); height:100%; border-top:1px solid #221d39; border-left:1px solid #221d39;"></span><span style="position:absolute; right:0; top:0; width:calc(100% - 9px); height:100%; border-top:1px solid #221d39; border-right:1px solid #221d39;"></span><span style="position:absolute; left:0; bottom:0; width:calc(100% - 9px); height:100%; border-bottom:1px solid #221d39; border-left:1px solid #221d39;"></span><span style="position:absolute; right:0; bottom:0; width:calc(100% - 9px); height:100%; border-bottom:1px solid #221d39; border-right:1px solid #221d39;"></span>简单&nbsp;·&nbsp;成功</span>
+  </div>
+  <span style="position:relative; z-index:1; display:block; height:1px; margin:0 0 16px;
+               background:linear-gradient(90deg, rgba(34,29,57,0.45), rgba(34,29,57,0));"></span>
+
+  <p style="position:relative; z-index:1; margin:0; font-size:15px;">
     【占位符：在此写入人格语音，一句话】
   </p>
 
-  <div style="margin:18px 0 0; padding-top:12px; display:flex; align-items:center; gap:8px;">
+  <span style="position:relative; z-index:1; display:block; height:1px; width:45%; margin:18px 0 0;
+               background:linear-gradient(90deg, rgba(199,183,231,0.35), rgba(199,183,231,0));"></span>
+  <div style="position:relative; z-index:1; margin:14px 0 0; display:flex; align-items:baseline; gap:8px;">
     <span style="font-size:12px; letter-spacing:0.3em; opacity:0.55; color:#c7b7e7;">REVACHOL&nbsp;·&nbsp;’51</span>
     <span style="flex:1;"></span>
-    <span style="font-size:12px; letter-spacing:0.3em; color:#221d39;">INLAND&nbsp;EMPIRE</span>
+    <span style="font-family:'Edwardian Script ITC','French Script MT','Lucida Handwriting','Apple Chancery','Segoe Script','Brush Script MT',cursive;
+                 font-style:italic; font-size:23px; letter-spacing:0.04em; color:#221d39;">Inland&nbsp;Empire</span>
   </div>
 </div>
 
 <!-- ============ 体格 PHYSIQUE ============ -->
-<h2 style="margin:0; font-family:Georgia,'Songti SC',serif; font-weight:normal;
-           font-size:18px; letter-spacing:0.3em; color:#ece1c9;">体格 · PHYSIQUE</h2>
+<h2 style="margin:0; font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-weight:normal;
+           font-size:18px; letter-spacing:0.3em; color:#8a8272;">体格 · PHYSIQUE</h2>
 <p style="margin:6px 0 0; font-family:Georgia,serif; font-size:12px; letter-spacing:0.15em;
-          color:#ece1c9; opacity:0.6;">--de-text: #b04045 &nbsp;·&nbsp; --de-accent: #7d2429</p>
-<div style="display:block; box-sizing:border-box;
+          color:#a39c8d;">--de-text: #b04045 &nbsp;·&nbsp; --de-accent: #7d2429</p>
+<div style="display:block; box-sizing:border-box; position:relative;
             width:100%; max-width:400px; margin:16px auto;
             padding:26px 28px 22px;
             font-family:Georgia,'Songti SC','SimSun',serif; color:#b04045;
             line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
 
-  <div style="display:flex; align-items:center; gap:10px; margin:0 0 16px; font-family:'Palatino Linotype', Palatino, 'STKaiti', 'KaiTi', 'SimSun', serif;">
+  <div style="position:relative; z-index:1; display:flex; align-items:center; gap:10px; margin:0 0 14px;">
     <span style="font-size:10px; color:#7d2429;">◆</span>
-    <span style="font-size:15px; font-weight:bold; letter-spacing:0.24em;
+    <span style="font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif;
+                 font-size:19px; font-weight:bold; letter-spacing:0.28em;
                  color:#7d2429; white-space:nowrap;">内陆帝国</span>
-    <span style="font-size:13px; font-weight:bold; letter-spacing:0.12em; white-space:nowrap;
-                 padding:3px 9px; border-radius:2px;
-                 color:#7d2429; border:1px solid #7d2429;">简单 · 成功</span>
-  </div>
 
-  <p style="margin:0; font-size:15px;">
+    <span style="position:relative; display:inline-block; white-space:nowrap; font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-size:13px; letter-spacing:0.12em; padding:5px 12px; color:#7d2429; background:rgba(125,36,41,0.08);"><span style="position:absolute; left:0; top:0; width:calc(100% - 9px); height:100%; border-top:1px solid #7d2429; border-left:1px solid #7d2429;"></span><span style="position:absolute; right:0; top:0; width:calc(100% - 9px); height:100%; border-top:1px solid #7d2429; border-right:1px solid #7d2429;"></span><span style="position:absolute; left:0; bottom:0; width:calc(100% - 9px); height:100%; border-bottom:1px solid #7d2429; border-left:1px solid #7d2429;"></span><span style="position:absolute; right:0; bottom:0; width:calc(100% - 9px); height:100%; border-bottom:1px solid #7d2429; border-right:1px solid #7d2429;"></span>简单&nbsp;·&nbsp;成功</span>
+  </div>
+  <span style="position:relative; z-index:1; display:block; height:1px; margin:0 0 16px;
+               background:linear-gradient(90deg, rgba(125,36,41,0.45), rgba(125,36,41,0));"></span>
+
+  <p style="position:relative; z-index:1; margin:0; font-size:15px;">
     【占位符：在此写入人格语音，一句话】
   </p>
 
-  <div style="margin:18px 0 0; padding-top:12px; display:flex; align-items:center; gap:8px;">
+  <span style="position:relative; z-index:1; display:block; height:1px; width:45%; margin:18px 0 0;
+               background:linear-gradient(90deg, rgba(176,64,69,0.35), rgba(176,64,69,0));"></span>
+  <div style="position:relative; z-index:1; margin:14px 0 0; display:flex; align-items:baseline; gap:8px;">
     <span style="font-size:12px; letter-spacing:0.3em; opacity:0.55; color:#b04045;">REVACHOL&nbsp;·&nbsp;’51</span>
     <span style="flex:1;"></span>
-    <span style="font-size:12px; letter-spacing:0.3em; color:#7d2429;">INLAND&nbsp;EMPIRE</span>
+    <span style="font-family:'Edwardian Script ITC','French Script MT','Lucida Handwriting','Apple Chancery','Segoe Script','Brush Script MT',cursive;
+                 font-style:italic; font-size:23px; letter-spacing:0.04em; color:#7d2429;">Inland&nbsp;Empire</span>
   </div>
 </div>
 
 <!-- ============ 身手 MOTORICS ============ -->
-<h2 style="margin:0; font-family:Georgia,'Songti SC',serif; font-weight:normal;
-           font-size:18px; letter-spacing:0.3em; color:#ece1c9;">身手 · MOTORICS</h2>
+<h2 style="margin:0; font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-weight:normal;
+           font-size:18px; letter-spacing:0.3em; color:#8a8272;">身手 · MOTORICS</h2>
 <p style="margin:6px 0 0; font-family:Georgia,serif; font-size:12px; letter-spacing:0.15em;
-          color:#ece1c9; opacity:0.6;">--de-text: #c2a435 &nbsp;·&nbsp; --de-accent: #b69a46</p>
-<div style="display:block; box-sizing:border-box;
+          color:#a39c8d;">--de-text: #c2a435 &nbsp;·&nbsp; --de-accent: #b69a46</p>
+<div style="display:block; box-sizing:border-box; position:relative;
             width:100%; max-width:400px; margin:16px auto;
             padding:26px 28px 22px;
             font-family:Georgia,'Songti SC','SimSun',serif; color:#c2a435;
             line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
 
-  <div style="display:flex; align-items:center; gap:10px; margin:0 0 16px; font-family:'Palatino Linotype', Palatino, 'STKaiti', 'KaiTi', 'SimSun', serif;">
+  <div style="position:relative; z-index:1; display:flex; align-items:center; gap:10px; margin:0 0 14px;">
     <span style="font-size:10px; color:#b69a46;">◆</span>
-    <span style="font-size:15px; font-weight:bold; letter-spacing:0.24em;
+    <span style="font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif;
+                 font-size:19px; font-weight:bold; letter-spacing:0.28em;
                  color:#b69a46; white-space:nowrap;">内陆帝国</span>
-    <span style="font-size:13px; font-weight:bold; letter-spacing:0.12em; white-space:nowrap;
-                 padding:3px 9px; border-radius:2px;
-                 color:#b69a46; border:1px solid #b69a46;">简单 · 成功</span>
-  </div>
 
-  <p style="margin:0; font-size:15px;">
+    <span style="position:relative; display:inline-block; white-space:nowrap; font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-size:13px; letter-spacing:0.12em; padding:5px 12px; color:#b69a46; background:rgba(182,154,70,0.12);"><span style="position:absolute; left:0; top:0; width:calc(100% - 9px); height:100%; border-top:1px solid #b69a46; border-left:1px solid #b69a46;"></span><span style="position:absolute; right:0; top:0; width:calc(100% - 9px); height:100%; border-top:1px solid #b69a46; border-right:1px solid #b69a46;"></span><span style="position:absolute; left:0; bottom:0; width:calc(100% - 9px); height:100%; border-bottom:1px solid #b69a46; border-left:1px solid #b69a46;"></span><span style="position:absolute; right:0; bottom:0; width:calc(100% - 9px); height:100%; border-bottom:1px solid #b69a46; border-right:1px solid #b69a46;"></span>简单&nbsp;·&nbsp;成功</span>
+  </div>
+  <span style="position:relative; z-index:1; display:block; height:1px; margin:0 0 16px;
+               background:linear-gradient(90deg, rgba(182,154,70,0.5), rgba(182,154,70,0));"></span>
+
+  <p style="position:relative; z-index:1; margin:0; font-size:15px;">
     【占位符：在此写入人格语音，一句话】
   </p>
 
-  <div style="margin:18px 0 0; padding-top:12px; display:flex; align-items:center; gap:8px;">
+  <span style="position:relative; z-index:1; display:block; height:1px; width:45%; margin:18px 0 0;
+               background:linear-gradient(90deg, rgba(194,164,53,0.4), rgba(194,164,53,0));"></span>
+  <div style="position:relative; z-index:1; margin:14px 0 0; display:flex; align-items:baseline; gap:8px;">
     <span style="font-size:12px; letter-spacing:0.3em; opacity:0.55; color:#c2a435;">REVACHOL&nbsp;·&nbsp;’51</span>
     <span style="flex:1;"></span>
-    <span style="font-size:12px; letter-spacing:0.3em; color:#b69a46;">INLAND&nbsp;EMPIRE</span>
+    <span style="font-family:'Edwardian Script ITC','French Script MT','Lucida Handwriting','Apple Chancery','Segoe Script','Brush Script MT',cursive;
+                 font-style:italic; font-size:23px; letter-spacing:0.04em; color:#b69a46;">Inland&nbsp;Empire</span>
   </div>
 </div>
 
