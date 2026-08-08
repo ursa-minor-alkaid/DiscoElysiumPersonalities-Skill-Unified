@@ -29,24 +29,21 @@
             font-family:Georgia,'Songti SC','SimSun',serif; color:#7b857a;
             line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
 
-  <!-- ===== 胶片质感修饰（仅视觉，span 承担，不改框架） ===== -->
-  <!-- 斜向噪点 + 两道竖直划痕 -->
-  <span style="position:absolute; left:0; top:0; right:0; bottom:0; z-index:0; pointer-events:none; background:repeating-linear-gradient(115deg, rgba(58,74,98,0.05) 0, rgba(58,74,98,0.05) 1px, transparent 1px, transparent 9px);"></span>
+  <!-- ===== 胶卷边框修饰（仅视觉，span 承担，不改框架） ===== -->
+  <!-- 右侧竖直胶片边带（呼应原作对话框右侧的胶片条，帧编号印于带上） -->
+  <span style="position:absolute; right:0; top:0; bottom:0; width:16px; z-index:0; pointer-events:none; background:rgba(58,74,98,0.08); border-left:1px solid rgba(58,74,98,0.28);"></span>
+  <!-- 两道竖直划痕（胶片擦痕，贯穿全卷） -->
   <span style="position:absolute; top:0; bottom:0; left:16%; width:1px; z-index:0; background:rgba(58,74,98,0.07);"></span>
   <span style="position:absolute; top:0; bottom:0; left:84%; width:1px; z-index:0; background:rgba(58,74,98,0.05);"></span>
-  <!-- 四角 L 形括线 -->
+  <!-- 四角 L 形取景括线（右侧内移，避开胶片边带） -->
   <span style="position:absolute; left:8px; top:8px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(58,74,98,0.55); border-top:1px solid rgba(58,74,98,0.55);"></span>
-  <span style="position:absolute; right:8px; top:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(58,74,98,0.55); border-top:1px solid rgba(58,74,98,0.55);"></span>
+  <span style="position:absolute; right:24px; top:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(58,74,98,0.55); border-top:1px solid rgba(58,74,98,0.55);"></span>
   <span style="position:absolute; left:8px; bottom:8px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(58,74,98,0.55); border-bottom:1px solid rgba(58,74,98,0.55);"></span>
-  <span style="position:absolute; right:8px; bottom:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(58,74,98,0.55); border-bottom:1px solid rgba(58,74,98,0.55);"></span>
-  <!-- 上下片孔齿条 -->
-  <span style="position:absolute; left:28px; right:28px; top:2px; height:5px; z-index:0; background:repeating-linear-gradient(90deg, rgba(58,74,98,0.3) 0, rgba(58,74,98,0.3) 1px, transparent 1px, transparent 11px);"></span>
-  <span style="position:absolute; left:28px; right:28px; bottom:2px; height:5px; z-index:0; background:repeating-linear-gradient(90deg, rgba(58,74,98,0.3) 0, rgba(58,74,98,0.3) 1px, transparent 1px, transparent 11px);"></span>
-  <!-- 两侧刻度轨 -->
+  <span style="position:absolute; right:24px; bottom:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(58,74,98,0.55); border-bottom:1px solid rgba(58,74,98,0.55);"></span>
+  <!-- 左侧刻度轨 -->
   <span style="position:absolute; left:2px; top:28px; bottom:28px; width:5px; z-index:0; background:repeating-linear-gradient(180deg, rgba(58,74,98,0.35) 0, rgba(58,74,98,0.35) 1px, transparent 1px, transparent 13px);"></span>
-  <span style="position:absolute; right:2px; top:28px; bottom:28px; width:5px; z-index:0; background:repeating-linear-gradient(180deg, rgba(58,74,98,0.35) 0, rgba(58,74,98,0.35) 1px, transparent 1px, transparent 13px);"></span>
-  <!-- 右侧竖排档案编号 -->
-  <span style="position:absolute; right:3px; top:50%; transform:translateY(-50%); z-index:0; writing-mode:vertical-rl; font-family:Georgia,serif; font-size:8px; letter-spacing:0.4em; color:rgba(58,74,98,0.5); white-space:nowrap;">01A&nbsp;·&nbsp;’51</span>
+  <!-- 右侧竖排帧编号（印在胶片边带上） -->
+  <span style="position:absolute; right:3px; top:50%; transform:translateY(-50%); z-index:0; writing-mode:vertical-rl; font-family:Georgia,serif; font-size:8px; letter-spacing:0.4em; color:rgba(58,74,98,0.55); white-space:nowrap;">01A&nbsp;·&nbsp;’51</span>
   <!-- 水印菱印 -->
   <span style="position:absolute; right:22px; top:46%; z-index:0; font-size:66px; line-height:1; color:rgba(58,74,98,0.07);">◆</span>
 
@@ -87,24 +84,21 @@
             font-family:Georgia,'Songti SC','SimSun',serif; color:#c7b7e7;
             line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
 
-  <!-- ===== 胶片质感修饰（仅视觉，span 承担，不改框架） ===== -->
-  <!-- 斜向噪点 + 两道竖直划痕 -->
-  <span style="position:absolute; left:0; top:0; right:0; bottom:0; z-index:0; pointer-events:none; background:repeating-linear-gradient(115deg, rgba(34,29,57,0.05) 0, rgba(34,29,57,0.05) 1px, transparent 1px, transparent 9px);"></span>
+  <!-- ===== 胶卷边框修饰（仅视觉，span 承担，不改框架） ===== -->
+  <!-- 右侧竖直胶片边带（呼应原作对话框右侧的胶片条，帧编号印于带上） -->
+  <span style="position:absolute; right:0; top:0; bottom:0; width:16px; z-index:0; pointer-events:none; background:rgba(34,29,57,0.08); border-left:1px solid rgba(34,29,57,0.28);"></span>
+  <!-- 两道竖直划痕（胶片擦痕，贯穿全卷） -->
   <span style="position:absolute; top:0; bottom:0; left:16%; width:1px; z-index:0; background:rgba(34,29,57,0.07);"></span>
   <span style="position:absolute; top:0; bottom:0; left:84%; width:1px; z-index:0; background:rgba(34,29,57,0.05);"></span>
-  <!-- 四角 L 形括线 -->
+  <!-- 四角 L 形取景括线（右侧内移，避开胶片边带） -->
   <span style="position:absolute; left:8px; top:8px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(34,29,57,0.55); border-top:1px solid rgba(34,29,57,0.55);"></span>
-  <span style="position:absolute; right:8px; top:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(34,29,57,0.55); border-top:1px solid rgba(34,29,57,0.55);"></span>
+  <span style="position:absolute; right:24px; top:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(34,29,57,0.55); border-top:1px solid rgba(34,29,57,0.55);"></span>
   <span style="position:absolute; left:8px; bottom:8px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(34,29,57,0.55); border-bottom:1px solid rgba(34,29,57,0.55);"></span>
-  <span style="position:absolute; right:8px; bottom:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(34,29,57,0.55); border-bottom:1px solid rgba(34,29,57,0.55);"></span>
-  <!-- 上下片孔齿条 -->
-  <span style="position:absolute; left:28px; right:28px; top:2px; height:5px; z-index:0; background:repeating-linear-gradient(90deg, rgba(34,29,57,0.3) 0, rgba(34,29,57,0.3) 1px, transparent 1px, transparent 11px);"></span>
-  <span style="position:absolute; left:28px; right:28px; bottom:2px; height:5px; z-index:0; background:repeating-linear-gradient(90deg, rgba(34,29,57,0.3) 0, rgba(34,29,57,0.3) 1px, transparent 1px, transparent 11px);"></span>
-  <!-- 两侧刻度轨 -->
+  <span style="position:absolute; right:24px; bottom:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(34,29,57,0.55); border-bottom:1px solid rgba(34,29,57,0.55);"></span>
+  <!-- 左侧刻度轨 -->
   <span style="position:absolute; left:2px; top:28px; bottom:28px; width:5px; z-index:0; background:repeating-linear-gradient(180deg, rgba(34,29,57,0.35) 0, rgba(34,29,57,0.35) 1px, transparent 1px, transparent 13px);"></span>
-  <span style="position:absolute; right:2px; top:28px; bottom:28px; width:5px; z-index:0; background:repeating-linear-gradient(180deg, rgba(34,29,57,0.35) 0, rgba(34,29,57,0.35) 1px, transparent 1px, transparent 13px);"></span>
-  <!-- 右侧竖排档案编号 -->
-  <span style="position:absolute; right:3px; top:50%; transform:translateY(-50%); z-index:0; writing-mode:vertical-rl; font-family:Georgia,serif; font-size:8px; letter-spacing:0.4em; color:rgba(34,29,57,0.5); white-space:nowrap;">01A&nbsp;·&nbsp;’51</span>
+  <!-- 右侧竖排帧编号（印在胶片边带上） -->
+  <span style="position:absolute; right:3px; top:50%; transform:translateY(-50%); z-index:0; writing-mode:vertical-rl; font-family:Georgia,serif; font-size:8px; letter-spacing:0.4em; color:rgba(34,29,57,0.55); white-space:nowrap;">01A&nbsp;·&nbsp;’51</span>
   <!-- 水印菱印 -->
   <span style="position:absolute; right:22px; top:46%; z-index:0; font-size:66px; line-height:1; color:rgba(34,29,57,0.07);">◆</span>
 
@@ -144,24 +138,21 @@
             font-family:Georgia,'Songti SC','SimSun',serif; color:#b04045;
             line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
 
-  <!-- ===== 胶片质感修饰（仅视觉，span 承担，不改框架） ===== -->
-  <!-- 斜向噪点 + 两道竖直划痕 -->
-  <span style="position:absolute; left:0; top:0; right:0; bottom:0; z-index:0; pointer-events:none; background:repeating-linear-gradient(115deg, rgba(125,36,41,0.05) 0, rgba(125,36,41,0.05) 1px, transparent 1px, transparent 9px);"></span>
+  <!-- ===== 胶卷边框修饰（仅视觉，span 承担，不改框架） ===== -->
+  <!-- 右侧竖直胶片边带（呼应原作对话框右侧的胶片条，帧编号印于带上） -->
+  <span style="position:absolute; right:0; top:0; bottom:0; width:16px; z-index:0; pointer-events:none; background:rgba(125,36,41,0.08); border-left:1px solid rgba(125,36,41,0.28);"></span>
+  <!-- 两道竖直划痕（胶片擦痕，贯穿全卷） -->
   <span style="position:absolute; top:0; bottom:0; left:16%; width:1px; z-index:0; background:rgba(125,36,41,0.07);"></span>
   <span style="position:absolute; top:0; bottom:0; left:84%; width:1px; z-index:0; background:rgba(125,36,41,0.05);"></span>
-  <!-- 四角 L 形括线 -->
+  <!-- 四角 L 形取景括线（右侧内移，避开胶片边带） -->
   <span style="position:absolute; left:8px; top:8px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(125,36,41,0.55); border-top:1px solid rgba(125,36,41,0.55);"></span>
-  <span style="position:absolute; right:8px; top:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(125,36,41,0.55); border-top:1px solid rgba(125,36,41,0.55);"></span>
+  <span style="position:absolute; right:24px; top:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(125,36,41,0.55); border-top:1px solid rgba(125,36,41,0.55);"></span>
   <span style="position:absolute; left:8px; bottom:8px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(125,36,41,0.55); border-bottom:1px solid rgba(125,36,41,0.55);"></span>
-  <span style="position:absolute; right:8px; bottom:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(125,36,41,0.55); border-bottom:1px solid rgba(125,36,41,0.55);"></span>
-  <!-- 上下片孔齿条 -->
-  <span style="position:absolute; left:28px; right:28px; top:2px; height:5px; z-index:0; background:repeating-linear-gradient(90deg, rgba(125,36,41,0.3) 0, rgba(125,36,41,0.3) 1px, transparent 1px, transparent 11px);"></span>
-  <span style="position:absolute; left:28px; right:28px; bottom:2px; height:5px; z-index:0; background:repeating-linear-gradient(90deg, rgba(125,36,41,0.3) 0, rgba(125,36,41,0.3) 1px, transparent 1px, transparent 11px);"></span>
-  <!-- 两侧刻度轨 -->
+  <span style="position:absolute; right:24px; bottom:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(125,36,41,0.55); border-bottom:1px solid rgba(125,36,41,0.55);"></span>
+  <!-- 左侧刻度轨 -->
   <span style="position:absolute; left:2px; top:28px; bottom:28px; width:5px; z-index:0; background:repeating-linear-gradient(180deg, rgba(125,36,41,0.35) 0, rgba(125,36,41,0.35) 1px, transparent 1px, transparent 13px);"></span>
-  <span style="position:absolute; right:2px; top:28px; bottom:28px; width:5px; z-index:0; background:repeating-linear-gradient(180deg, rgba(125,36,41,0.35) 0, rgba(125,36,41,0.35) 1px, transparent 1px, transparent 13px);"></span>
-  <!-- 右侧竖排档案编号 -->
-  <span style="position:absolute; right:3px; top:50%; transform:translateY(-50%); z-index:0; writing-mode:vertical-rl; font-family:Georgia,serif; font-size:8px; letter-spacing:0.4em; color:rgba(125,36,41,0.5); white-space:nowrap;">01A&nbsp;·&nbsp;’51</span>
+  <!-- 右侧竖排帧编号（印在胶片边带上） -->
+  <span style="position:absolute; right:3px; top:50%; transform:translateY(-50%); z-index:0; writing-mode:vertical-rl; font-family:Georgia,serif; font-size:8px; letter-spacing:0.4em; color:rgba(125,36,41,0.55); white-space:nowrap;">01A&nbsp;·&nbsp;’51</span>
   <!-- 水印菱印 -->
   <span style="position:absolute; right:22px; top:46%; z-index:0; font-size:66px; line-height:1; color:rgba(125,36,41,0.07);">◆</span>
 
@@ -201,24 +192,21 @@
             font-family:Georgia,'Songti SC','SimSun',serif; color:#c2a435;
             line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
 
-  <!-- ===== 胶片质感修饰（仅视觉，span 承担，不改框架） ===== -->
-  <!-- 斜向噪点 + 两道竖直划痕 -->
-  <span style="position:absolute; left:0; top:0; right:0; bottom:0; z-index:0; pointer-events:none; background:repeating-linear-gradient(115deg, rgba(182,154,70,0.05) 0, rgba(182,154,70,0.05) 1px, transparent 1px, transparent 9px);"></span>
+  <!-- ===== 胶卷边框修饰（仅视觉，span 承担，不改框架） ===== -->
+  <!-- 右侧竖直胶片边带（呼应原作对话框右侧的胶片条，帧编号印于带上） -->
+  <span style="position:absolute; right:0; top:0; bottom:0; width:16px; z-index:0; pointer-events:none; background:rgba(182,154,70,0.08); border-left:1px solid rgba(182,154,70,0.28);"></span>
+  <!-- 两道竖直划痕（胶片擦痕，贯穿全卷） -->
   <span style="position:absolute; top:0; bottom:0; left:16%; width:1px; z-index:0; background:rgba(182,154,70,0.07);"></span>
   <span style="position:absolute; top:0; bottom:0; left:84%; width:1px; z-index:0; background:rgba(182,154,70,0.05);"></span>
-  <!-- 四角 L 形括线 -->
+  <!-- 四角 L 形取景括线（右侧内移，避开胶片边带） -->
   <span style="position:absolute; left:8px; top:8px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(182,154,70,0.55); border-top:1px solid rgba(182,154,70,0.55);"></span>
-  <span style="position:absolute; right:8px; top:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(182,154,70,0.55); border-top:1px solid rgba(182,154,70,0.55);"></span>
+  <span style="position:absolute; right:24px; top:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(182,154,70,0.55); border-top:1px solid rgba(182,154,70,0.55);"></span>
   <span style="position:absolute; left:8px; bottom:8px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(182,154,70,0.55); border-bottom:1px solid rgba(182,154,70,0.55);"></span>
-  <span style="position:absolute; right:8px; bottom:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(182,154,70,0.55); border-bottom:1px solid rgba(182,154,70,0.55);"></span>
-  <!-- 上下片孔齿条 -->
-  <span style="position:absolute; left:28px; right:28px; top:2px; height:5px; z-index:0; background:repeating-linear-gradient(90deg, rgba(182,154,70,0.3) 0, rgba(182,154,70,0.3) 1px, transparent 1px, transparent 11px);"></span>
-  <span style="position:absolute; left:28px; right:28px; bottom:2px; height:5px; z-index:0; background:repeating-linear-gradient(90deg, rgba(182,154,70,0.3) 0, rgba(182,154,70,0.3) 1px, transparent 1px, transparent 11px);"></span>
-  <!-- 两侧刻度轨 -->
+  <span style="position:absolute; right:24px; bottom:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(182,154,70,0.55); border-bottom:1px solid rgba(182,154,70,0.55);"></span>
+  <!-- 左侧刻度轨 -->
   <span style="position:absolute; left:2px; top:28px; bottom:28px; width:5px; z-index:0; background:repeating-linear-gradient(180deg, rgba(182,154,70,0.35) 0, rgba(182,154,70,0.35) 1px, transparent 1px, transparent 13px);"></span>
-  <span style="position:absolute; right:2px; top:28px; bottom:28px; width:5px; z-index:0; background:repeating-linear-gradient(180deg, rgba(182,154,70,0.35) 0, rgba(182,154,70,0.35) 1px, transparent 1px, transparent 13px);"></span>
-  <!-- 右侧竖排档案编号 -->
-  <span style="position:absolute; right:3px; top:50%; transform:translateY(-50%); z-index:0; writing-mode:vertical-rl; font-family:Georgia,serif; font-size:8px; letter-spacing:0.4em; color:rgba(182,154,70,0.5); white-space:nowrap;">01A&nbsp;·&nbsp;’51</span>
+  <!-- 右侧竖排帧编号（印在胶片边带上） -->
+  <span style="position:absolute; right:3px; top:50%; transform:translateY(-50%); z-index:0; writing-mode:vertical-rl; font-family:Georgia,serif; font-size:8px; letter-spacing:0.4em; color:rgba(182,154,70,0.55); white-space:nowrap;">01A&nbsp;·&nbsp;’51</span>
   <!-- 水印菱印 -->
   <span style="position:absolute; right:22px; top:46%; z-index:0; font-size:66px; line-height:1; color:rgba(182,154,70,0.07);">◆</span>
 

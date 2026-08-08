@@ -111,25 +111,20 @@ description: 极乐迪斯科 24 人格风格对话。用户输入 `Disco:on` \ `
             font-family:Georgia,'Songti SC','SimSun',serif; color:#7b857a;
             line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
   <!-- ===== 胶卷边框修饰（仅视觉，span 承担，不改框架） ===== -->
-  <!-- 上齿孔带：半透明带底 + 内缘线 + 等距矩形片孔 -->
-  <span style="position:absolute; left:0; right:0; top:0; height:18px; z-index:0; pointer-events:none; background:rgba(58,74,98,0.10); border-bottom:1px solid rgba(58,74,98,0.30);"></span>
-  <span style="position:absolute; left:14px; right:14px; top:5px; height:8px; z-index:0; pointer-events:none; background:repeating-linear-gradient(90deg, rgba(58,74,98,0.45) 0, rgba(58,74,98,0.45) 10px, transparent 10px, transparent 22px);"></span>
-  <!-- 下齿孔带 -->
-  <span style="position:absolute; left:0; right:0; bottom:0; height:18px; z-index:0; pointer-events:none; background:rgba(58,74,98,0.10); border-top:1px solid rgba(58,74,98,0.30);"></span>
-  <span style="position:absolute; left:14px; right:14px; bottom:5px; height:8px; z-index:0; pointer-events:none; background:repeating-linear-gradient(90deg, rgba(58,74,98,0.45) 0, rgba(58,74,98,0.45) 10px, transparent 10px, transparent 22px);"></span>
+  <!-- 右侧竖直胶片边带（呼应原作对话框右侧的胶片条，帧编号印于带上） -->
+  <span style="position:absolute; right:0; top:0; bottom:0; width:16px; z-index:0; pointer-events:none; background:rgba(58,74,98,0.08); border-left:1px solid rgba(58,74,98,0.28);"></span>
   <!-- 两道竖直划痕（胶片擦痕，贯穿全卷） -->
   <span style="position:absolute; top:0; bottom:0; left:16%; width:1px; z-index:0; background:rgba(58,74,98,0.07);"></span>
   <span style="position:absolute; top:0; bottom:0; left:84%; width:1px; z-index:0; background:rgba(58,74,98,0.05);"></span>
-  <!-- 四角 L 形取景括线（下移至齿孔带内侧） -->
-  <span style="position:absolute; left:8px; top:24px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(58,74,98,0.55); border-top:1px solid rgba(58,74,98,0.55);"></span>
-  <span style="position:absolute; right:8px; top:24px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(58,74,98,0.55); border-top:1px solid rgba(58,74,98,0.55);"></span>
-  <span style="position:absolute; left:8px; bottom:24px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(58,74,98,0.55); border-bottom:1px solid rgba(58,74,98,0.55);"></span>
-  <span style="position:absolute; right:8px; bottom:24px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(58,74,98,0.55); border-bottom:1px solid rgba(58,74,98,0.55);"></span>
-  <!-- 两侧刻度轨 -->
+  <!-- 四角 L 形取景括线（右侧内移，避开胶片边带） -->
+  <span style="position:absolute; left:8px; top:8px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(58,74,98,0.55); border-top:1px solid rgba(58,74,98,0.55);"></span>
+  <span style="position:absolute; right:24px; top:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(58,74,98,0.55); border-top:1px solid rgba(58,74,98,0.55);"></span>
+  <span style="position:absolute; left:8px; bottom:8px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(58,74,98,0.55); border-bottom:1px solid rgba(58,74,98,0.55);"></span>
+  <span style="position:absolute; right:24px; bottom:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(58,74,98,0.55); border-bottom:1px solid rgba(58,74,98,0.55);"></span>
+  <!-- 左侧刻度轨 -->
   <span style="position:absolute; left:2px; top:28px; bottom:28px; width:5px; z-index:0; background:repeating-linear-gradient(180deg, rgba(58,74,98,0.35) 0, rgba(58,74,98,0.35) 1px, transparent 1px, transparent 13px);"></span>
-  <span style="position:absolute; right:2px; top:28px; bottom:28px; width:5px; z-index:0; background:repeating-linear-gradient(180deg, rgba(58,74,98,0.35) 0, rgba(58,74,98,0.35) 1px, transparent 1px, transparent 13px);"></span>
-  <!-- 右侧竖排档案编号 -->
-  <span style="position:absolute; right:3px; top:50%; transform:translateY(-50%); z-index:0; writing-mode:vertical-rl; font-family:Georgia,serif; font-size:8px; letter-spacing:0.4em; color:rgba(58,74,98,0.5); white-space:nowrap;">01A&nbsp;·&nbsp;’51</span>
+  <!-- 右侧竖排帧编号（印在胶片边带上） -->
+  <span style="position:absolute; right:3px; top:50%; transform:translateY(-50%); z-index:0; writing-mode:vertical-rl; font-family:Georgia,serif; font-size:8px; letter-spacing:0.4em; color:rgba(58,74,98,0.55); white-space:nowrap;">01A&nbsp;·&nbsp;’51</span>
   <!-- 水印菱印 -->
   <span style="position:absolute; right:22px; top:46%; z-index:0; font-size:66px; line-height:1; color:rgba(58,74,98,0.07);">◆</span>
   <div style="position:relative; z-index:1; display:flex; align-items:center; gap:10px; margin:0 0 14px;">
