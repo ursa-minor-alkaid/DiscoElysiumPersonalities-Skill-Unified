@@ -1,6 +1,6 @@
 ---
 name: disco-elysium-personalities
-description: 极乐迪斯科 24 人格风格对话。用户输入 `Disco:on` \ `Disco on` \ `disco:on`\ `disco on` 或类似的trigger，或上一轮对话中使用且未要求关闭时，启动；作用是在正常输出前加上两句《极乐迪斯科》游戏中不同人格的“风味”发言。
+description: 极乐迪斯科 24 人格风格对话。用户输入 `Disco:on` \ `Disco on` \ `disco:on`\ `disco on` 或类似的trigger，或上一轮对话中使用且未要求关闭时，启动；作用是在正常输出前加上两句《极乐迪斯科》游戏中不同人格的“风味”发言。注意：开启后，每次对话都需要调用该技能并查看相应的 `references/` 文件夹下的文件。
 ---
 
 # Disco Elysium 24 人格对话
@@ -69,9 +69,8 @@ description: 极乐迪斯科 24 人格风格对话。用户输入 `Disco:on` \ `
 
 ## 输出格式
 
-- **人格发言**：每个人格一段，1~2 个人格依次发言，**语料参考 `references/` 原文结合当前语境改写**；
-- **正常回答**：人格发言全部结束后空一行，用普通助手口吻**完整回答用户的问题**（结论、建议、解释都放这里，不用再带入人格腔调；**需要结构化的分点回答，如果用户有疑问则要给出切实可行的建议**）。
-- **实际输出时人格发言必须用下方"硬约束"章节的 `<div>` 模板包裹**。
+- **人格发言**：每个人格一段，按选中顺序依次发言；样式与包裹方式见下方"硬约束"。
+- **正常回答**：人格发言全部结束后空一行，用普通助手口吻作答（结论、建议、解释都放此部分）；**需要结构化的分点回答，用户有疑问时给出切实可行的建议**。
 
 ## 硬约束：风格对话必须用 <DIV> 包裹
 
@@ -102,37 +101,53 @@ description: 极乐迪斯科 24 人格风格对话。用户输入 `Disco:on` \ `
        下方示例为默认色，生成时必须替换为对应人格的颜色
      注意：
        - 直接输出 HTML，不要放进代码块；div 前后各留一个空行。
-       - div 内部不要留空行；所有行缩进不超过 2 个空格——缩进 4+ 空格会被
-         markdown 当成代码块，导致 HTML 显示成代码；检定徽标必须写成一行。 -->
-<div style="display:block; box-sizing:border-box; position:relative;
+       - div 内部不要留空行（空行会截断 markdown 的 HTML 块，导致绝对定位装饰
+         逃逸到整个屏幕）；所有行缩进不超过 2 个空格；检定徽标必须写成一行。
+       - 容器已设 position:relative + overflow:hidden 兜底：即使渲染器剥离定位，
+         装饰也会被裁切在框内、不会溢出。 -->
+<div style="display:block; box-sizing:border-box; position:relative; overflow:hidden;
             width:100%; max-width:400px; margin:16px auto;
             padding:26px 28px 22px;
             font-family:Georgia,'Songti SC','SimSun',serif; color:#7b857a;
             line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
-
+  <!-- ===== 胶卷边框修饰（仅视觉，span 承担，不改框架） ===== -->
+  <!-- 上齿孔带：半透明带底 + 内缘线 + 等距矩形片孔 -->
+  <span style="position:absolute; left:0; right:0; top:0; height:18px; z-index:0; pointer-events:none; background:rgba(58,74,98,0.10); border-bottom:1px solid rgba(58,74,98,0.30);"></span>
+  <span style="position:absolute; left:14px; right:14px; top:5px; height:8px; z-index:0; pointer-events:none; background:repeating-linear-gradient(90deg, rgba(58,74,98,0.45) 0, rgba(58,74,98,0.45) 10px, transparent 10px, transparent 22px);"></span>
+  <!-- 下齿孔带 -->
+  <span style="position:absolute; left:0; right:0; bottom:0; height:18px; z-index:0; pointer-events:none; background:rgba(58,74,98,0.10); border-top:1px solid rgba(58,74,98,0.30);"></span>
+  <span style="position:absolute; left:14px; right:14px; bottom:5px; height:8px; z-index:0; pointer-events:none; background:repeating-linear-gradient(90deg, rgba(58,74,98,0.45) 0, rgba(58,74,98,0.45) 10px, transparent 10px, transparent 22px);"></span>
+  <!-- 两道竖直划痕（胶片擦痕，贯穿全卷） -->
+  <span style="position:absolute; top:0; bottom:0; left:16%; width:1px; z-index:0; background:rgba(58,74,98,0.07);"></span>
+  <span style="position:absolute; top:0; bottom:0; left:84%; width:1px; z-index:0; background:rgba(58,74,98,0.05);"></span>
+  <!-- 四角 L 形取景括线（下移至齿孔带内侧） -->
+  <span style="position:absolute; left:8px; top:24px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(58,74,98,0.55); border-top:1px solid rgba(58,74,98,0.55);"></span>
+  <span style="position:absolute; right:8px; top:24px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(58,74,98,0.55); border-top:1px solid rgba(58,74,98,0.55);"></span>
+  <span style="position:absolute; left:8px; bottom:24px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(58,74,98,0.55); border-bottom:1px solid rgba(58,74,98,0.55);"></span>
+  <span style="position:absolute; right:8px; bottom:24px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(58,74,98,0.55); border-bottom:1px solid rgba(58,74,98,0.55);"></span>
+  <!-- 两侧刻度轨 -->
+  <span style="position:absolute; left:2px; top:28px; bottom:28px; width:5px; z-index:0; background:repeating-linear-gradient(180deg, rgba(58,74,98,0.35) 0, rgba(58,74,98,0.35) 1px, transparent 1px, transparent 13px);"></span>
+  <span style="position:absolute; right:2px; top:28px; bottom:28px; width:5px; z-index:0; background:repeating-linear-gradient(180deg, rgba(58,74,98,0.35) 0, rgba(58,74,98,0.35) 1px, transparent 1px, transparent 13px);"></span>
+  <!-- 右侧竖排档案编号 -->
+  <span style="position:absolute; right:3px; top:50%; transform:translateY(-50%); z-index:0; writing-mode:vertical-rl; font-family:Georgia,serif; font-size:8px; letter-spacing:0.4em; color:rgba(58,74,98,0.5); white-space:nowrap;">01A&nbsp;·&nbsp;’51</span>
+  <!-- 水印菱印 -->
+  <span style="position:absolute; right:22px; top:46%; z-index:0; font-size:66px; line-height:1; color:rgba(58,74,98,0.07);">◆</span>
   <div style="position:relative; z-index:1; display:flex; align-items:center; gap:10px; margin:0 0 14px;">
-
   <span style="font-size:10px; color:#3a4a62;">◆</span>
   <span style="font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-size:19px; font-weight:bold; letter-spacing:0.28em; color:#3a4a62; white-space:nowrap;">内陆帝国</span>
   <!-- 检定徽标：削去左上、右下两角（4条span边线拼合）；整块写成一行，避免缩进被当作代码 -->
-
   <span style="position:relative; display:inline-block; white-space:nowrap; font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-size:13px; letter-spacing:0.12em; padding:5px 12px; color:#3a4a62; background:rgba(58,74,98,0.08);"><span style="position:absolute; left:0; top:0; width:calc(100% - 9px); height:100%; border-top:1px solid #3a4a62; border-left:1px solid #3a4a62;"></span><span style="position:absolute; right:0; top:0; width:calc(100% - 9px); height:100%; border-top:1px solid #3a4a62; border-right:1px solid #3a4a62;"></span><span style="position:absolute; left:0; bottom:0; width:calc(100% - 9px); height:100%; border-bottom:1px solid #3a4a62; border-left:1px solid #3a4a62;"></span><span style="position:absolute; right:0; bottom:0; width:calc(100% - 9px); height:100%; border-bottom:1px solid #3a4a62; border-right:1px solid #3a4a62;"></span>简单&nbsp;·&nbsp;成功</span>
-
   </div>
-
   <span style="position:relative; z-index:1; display:block; height:1px; margin:0 0 16px; background:linear-gradient(90deg, rgba(58,74,98,0.45), rgba(58,74,98,0));"></span>
   <p style="position:relative; z-index:1; margin:0; font-size:15px;">
   【占位符：在此写入人格语音，1~3句话；<b>要求不同句子直接格式不能雷同！！</b>】
   </p>
-
   <span style="position:relative; z-index:1; display:block; height:1px; width:45%; margin:18px 0 0; background:linear-gradient(90deg, rgba(123,133,122,0.35), rgba(123,133,122,0));"></span>
-
   <div style="position:relative; z-index:1; margin:14px 0 0; display:flex; align-items:baseline; gap:8px;">
   <span style="font-size:12px; letter-spacing:0.3em; opacity:0.55; color:#7b857a;">REVACHOL&nbsp;·&nbsp;’51</span>
   <span style="flex:1;"></span>
   <span style="font-family:'Edwardian Script ITC','French Script MT','Lucida Handwriting','Apple Chancery','Segoe Script','Brush Script MT',cursive; font-style:italic; font-size:23px; letter-spacing:0.04em; color:#3a4a62;">Inland&nbsp;Empire</span>
   </div>
-
 </div>
 ```
 

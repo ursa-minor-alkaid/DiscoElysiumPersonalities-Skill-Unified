@@ -12,7 +12,7 @@
 
 - `--de-bg`: #0c0c0c
 - `--de-text`: #c7b7e7
-- `--de-accent`: #221d39
+- `--de-accent`: #726b95
 
 ## 语料参考/范例
 
