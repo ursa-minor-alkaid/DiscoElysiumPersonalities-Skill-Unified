@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <!-- 极乐迪斯科风格对话框（单个=一个人格）
      配色说明：
        无背景（透明）
@@ -10,42 +11,52 @@
          逃逸到整个屏幕）；所有行缩进不超过 2 个空格；检定徽标必须写成一行。
        - 容器已设 position:relative + overflow:hidden 兜底：即使渲染器剥离定位，
          装饰也会被裁切在框内、不会溢出。 -->
+
+<style>
+@font-face{font-family:'Iansui';src:url('https://cdn.jsdelivr.net/gh/ButTaiwan/iansui@main/fonts/ttf/Iansui-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
+</style>
+
 <div style="display:block; box-sizing:border-box; position:relative; overflow:hidden;
             width:100%; max-width:400px; margin:16px auto;
             padding:26px 28px 22px;
             font-family:Georgia,'Songti SC','SimSun',serif; color:#7b857a;
             line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
   <!-- ===== 胶卷边框修饰（仅视觉，span 承担，不改框架） ===== -->
+
   <!-- 右侧竖直胶片边带（呼应原作对话框右侧的胶片条，帧编号印于带上） -->
   <span style="position:absolute; right:0; top:0; bottom:0; width:16px; z-index:0; pointer-events:none; background:rgba(58,74,98,0.08); border-left:1px solid rgba(58,74,98,0.28);"></span>
-  <!-- 两道竖直划痕（胶片擦痕，贯穿全卷） -->
-  <span style="position:absolute; top:0; bottom:0; left:16%; width:1px; z-index:0; background:rgba(58,74,98,0.07);"></span>
-  <span style="position:absolute; top:0; bottom:0; left:84%; width:1px; z-index:0; background:rgba(58,74,98,0.05);"></span>
-  <!-- 四角 L 形取景括线（右侧内移，避开胶片边带） -->
-  <span style="position:absolute; left:8px; top:8px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(58,74,98,0.55); border-top:1px solid rgba(58,74,98,0.55);"></span>
-  <span style="position:absolute; right:24px; top:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(58,74,98,0.55); border-top:1px solid rgba(58,74,98,0.55);"></span>
-  <span style="position:absolute; left:8px; bottom:8px; width:14px; height:14px; z-index:0; border-left:1px solid rgba(58,74,98,0.55); border-bottom:1px solid rgba(58,74,98,0.55);"></span>
-  <span style="position:absolute; right:24px; bottom:8px; width:14px; height:14px; z-index:0; border-right:1px solid rgba(58,74,98,0.55); border-bottom:1px solid rgba(58,74,98,0.55);"></span>
-  <!-- 左侧刻度轨 -->
-  <span style="position:absolute; left:2px; top:28px; bottom:28px; width:5px; z-index:0; background:repeating-linear-gradient(180deg, rgba(58,74,98,0.35) 0, rgba(58,74,98,0.35) 1px, transparent 1px, transparent 13px);"></span>
   <!-- 右侧竖排帧编号（印在胶片边带上） -->
   <span style="position:absolute; right:3px; top:50%; transform:translateY(-50%); z-index:0; writing-mode:vertical-rl; font-family:Georgia,serif; font-size:8px; letter-spacing:0.4em; color:rgba(58,74,98,0.55); white-space:nowrap;">01A&nbsp;·&nbsp;’51</span>
+  
+  <!-- 一道竖直划痕（胶片擦痕，贯穿全卷） -->
+  <span style="position:absolute; top:0; bottom:0; left:16%; width:1px; z-index:0; background:rgba(58,74,98,0.07);"></span>
+
+  <!-- 四角 L 形取景括线（右侧内移，避开胶片边带） -->
+  <span style="position:absolute; left:8px; top:8px; width:26px; height:14px; z-index:0; border-left:1.5px solid rgba(58,74,98,0.55); border-top:1.5px solid rgba(58,74,98,0.55);"></span>
+  <span style="position:absolute; right:24px; top:8px; width:26px; height:14px; z-index:0; border-right:1.5px solid rgba(58,74,98,0.55); border-top:1.5px solid rgba(58,74,98,0.55);"></span>
+  <span style="position:absolute; left:8px; bottom:8px; width:26px; height:14px; z-index:0; border-left:1.5px solid rgba(58,74,98,0.55); border-bottom:1.5px solid rgba(58,74,98,0.55);"></span>
+  <span style="position:absolute; right:24px; bottom:8px; width:26px; height:14px; z-index:0; border-right:1.5px solid rgba(58,74,98,0.55); border-bottom:1.5px solid rgba(58,74,98,0.55);"></span>
+
+  <!-- 左侧刻度轨 -->
+  <span style="position:absolute; left:2px; top:28px; bottom:28px; width:5px; z-index:0; background:repeating-linear-gradient(180deg, rgba(58,74,98,0.35) 0, rgba(58,74,98,0.35) 1px, transparent 1px, transparent 13px);"></span>
+
   <!-- 水印菱印 -->
   <span style="position:absolute; right:22px; top:46%; z-index:0; font-size:66px; line-height:1; color:rgba(58,74,98,0.07);">◆</span>
   <div style="position:relative; z-index:1; display:flex; align-items:center; gap:10px; margin:0 0 14px;">
   <span style="font-size:10px; color:#3a4a62;">◆</span>
-  <span style="font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-size:19px; font-weight:bold; letter-spacing:0.28em; color:#3a4a62; white-space:nowrap;">内陆帝国</span>
+  <span style="font-family:'Iansui','Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-size:19px; font-weight:bold; letter-spacing:0.28em; color:#3a4a62; white-space:nowrap;">內陸帝國</span>
+
   <!-- 检定徽标：削去左上、右下两角（4条span边线拼合）；整块写成一行，避免缩进被当作代码 -->
-  <span style="position:relative; display:inline-block; white-space:nowrap; font-family:'Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-size:13px; letter-spacing:0.12em; padding:5px 12px; color:#3a4a62; background:rgba(58,74,98,0.08);"><span style="position:absolute; left:0; top:0; width:calc(100% - 9px); height:100%; border-top:1px solid #3a4a62; border-left:1px solid #3a4a62;"></span><span style="position:absolute; right:0; top:0; width:calc(100% - 9px); height:100%; border-top:1px solid #3a4a62; border-right:1px solid #3a4a62;"></span><span style="position:absolute; left:0; bottom:0; width:calc(100% - 9px); height:100%; border-bottom:1px solid #3a4a62; border-left:1px solid #3a4a62;"></span><span style="position:absolute; right:0; bottom:0; width:calc(100% - 9px); height:100%; border-bottom:1px solid #3a4a62; border-right:1px solid #3a4a62;"></span>简单&nbsp;·&nbsp;成功</span>
+  <span style="position:relative; display:inline-block; white-space:nowrap; flex-shrink:0; align-self:center; margin-left:100px; font-family:'Times New Roman', Times, serif; font-weight:600; font-size:13px; letter-spacing:.2em; color:#3a4a62; border:2px solid #3a4a62; border-radius:4px; padding:4px 10px; transform:rotate(6deg); opacity:.85; mask-image:url('data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27120%27%20height=%2740%27%3E%3Cfilter%20id=%27r%27%3E%3CfeTurbulence%20baseFrequency=%270.6%27%20numOctaves=%272%27/%3E%3CfeColorMatrix%20values=%270%200%200%200%201%200%200%200%200%201%200%200%200%200%201%200%200%200%200.8%200.2%27/%3E%3C/filter%3E%3Crect%20width=%27120%27%20height=%2740%27%20filter=%27url(%23r)%27/%3E%3C/svg%3E');">简单&nbsp;·&nbsp;成功</span>
   </div>
   <span style="position:relative; z-index:1; display:block; height:1px; margin:0 0 16px; background:linear-gradient(90deg, rgba(58,74,98,0.45), rgba(58,74,98,0));"></span>
   <p style="position:relative; z-index:1; margin:0; font-size:15px;">
-  【占位符：在此写入人格语音，1~3句话；<b>要求不同句子直接格式不能雷同！！</b>】
+  【占位符：在此写入人格语音，1~3句话；<b>要求不同的句子之间的格式不能雷同！！</b>】
   </p>
   <span style="position:relative; z-index:1; display:block; height:1px; width:45%; margin:18px 0 0; background:linear-gradient(90deg, rgba(123,133,122,0.35), rgba(123,133,122,0));"></span>
   <div style="position:relative; z-index:1; margin:14px 0 0; display:flex; align-items:baseline; gap:8px;">
-  <span style="font-size:12px; letter-spacing:0.3em; opacity:0.55; color:#7b857a;">REVACHOL&nbsp;·&nbsp;’51</span>
+  <span style="font-size:12px; letter-spacing:0.3em; opacity:0.55; color:#7b857ab9;">REVACHOL&nbsp;·&nbsp;’51</span>
   <span style="flex:1;"></span>
-  <span style="font-family:'Edwardian Script ITC','French Script MT','Lucida Handwriting','Apple Chancery','Segoe Script','Brush Script MT',cursive; font-style:italic; font-size:23px; letter-spacing:0.04em; color:#3a4a62;">Inland&nbsp;Empire</span>
+  <span style="font-family:'Edwardian Script ITC','French Script MT','Lucida Handwriting','Apple Chancery','Segoe Script','Brush Script MT',cursive; font-style:italic; font-size:26px; letter-spacing:0.04em; color:#3a4a62;">Inland&nbsp;Empire</span>
   </div>
 </div>
