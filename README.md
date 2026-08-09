@@ -1,9 +1,9 @@
 # 极乐迪斯科 24 Personalities Skill
 
-> *"The furies are at home, in the mirror; 
-> it is their address.
-> Even the clearest water,
-> if deep enough can drown."
+> *"The furies are at home, in the mirror;<br>
+> it is their address.<br>
+> Even the clearest water,<br>
+> if deep enough can drown."<br>
 > -- R. S. Thomas*
 
 ## 简介
