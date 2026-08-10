@@ -93,7 +93,7 @@ description: 极乐迪斯科 24 人格风格对话。用户输入 `Disco:on` \ `
 完整模板（复制使用，替换示例文字与颜色即可；颜色值见 references 对应文件"参数信息"）：
 
 ```html
-<meta charset="utf-8">
+meta charset="utf-8">
 <!-- 极乐迪斯科风格对话框（单个=一个人格）
      配色说明：
        无背景（透明）
@@ -115,13 +115,22 @@ description: 极乐迪斯科 24 人格风格对话。用户输入 `Disco:on` \ `
             width:100%; max-width:400px; margin:16px auto;
             padding:26px 28px 22px;
             font-family:Georgia,'Songti SC','SimSun',serif; color:#7b857a;
-            line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;">
+            line-height:1.8; letter-spacing:0.02em; overflow-wrap:break-word;
+            box-shadow:4px 6px 14px rgba(58,74,98,0.22), 2px 3px 5px rgba(58,74,98,0.12);">
   <!-- ===== 胶卷边框修饰（仅视觉，span 承担，不改框架） ===== -->
 
-  <!-- 右侧竖直胶片边带（呼应原作对话框右侧的胶片条，帧编号印于带上） -->
+  <!-- 右侧竖直胶片边带（呼应原作对话框右侧的胶片条，帧编号印于带上；背景色不变） -->
   <span style="position:absolute; right:0; top:0; bottom:0; width:16px; z-index:0; pointer-events:none; background:rgba(58,74,98,0.08); border-left:1px solid rgba(58,74,98,0.28);"></span>
-  <!-- 右侧竖排帧编号（印在胶片边带上） -->
-  <span style="position:absolute; right:3px; top:50%; transform:translateY(-50%); z-index:0; writing-mode:vertical-rl; font-family:Georgia,serif; font-size:8px; letter-spacing:0.4em; color:rgba(58,74,98,0.55); white-space:nowrap;">01A&nbsp;·&nbsp;’51</span>
+
+  <!-- 竖排帧编号「01A13」（白色粗体印字，旋转180°自下而上读；SVG湍流遮罩做斑驳盖印磨损，仿图中 ENAFO 字样） -->
+  <span style="position:absolute; right:-5px; top:50%; transform:translateY(-50%) rotate(180deg); z-index:0; pointer-events:none; writing-mode:vertical-rl; font-family:Georgia,serif; font-weight:bold; font-size:14px; letter-spacing:0.32em; color:#828282; white-space:nowrap; mask-image:url('data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27120%27%20height=%27240%27%3E%3Cfilter%20id=%27r%27%3E%3CfeTurbulence%20baseFrequency=%270.35%27%20numOctaves=%272%27/%3E%3CfeColorMatrix%20values=%270%200%200%200%201%200%200%200%200%201%200%200%200%200%201%200%200%200%200.85%200.15%27/%3E%3C/filter%3E%3Crect%20width=%27120%27%20height=%27240%27%20filter=%27url(%23r)%27/%3E%3C/svg%3E'); mask-size:100% 100%;">01A13</span>
+
+  <!-- 定位圆标与引出线（白色小圆 + 向上细线） -->
+  <span style="position:absolute; right:2px; bottom:24px; width:6px; height:6px; z-index:0; pointer-events:none; border-radius:50%; background:rgba(255,255,255,0.85);"></span>
+  <span style="position:absolute; right:4.5px; bottom:30px; width:1px; height:56px; z-index:0; pointer-events:none; background:rgba(255,255,255,0.45);"></span>
+  <!-- 老化磨痕：深色贯穿竖痕 + 白色起毛短痕 -->
+  <span style="position:absolute; right:13px; top:0; bottom:0; width:1px; z-index:0; pointer-events:none; background:linear-gradient(180deg, transparent, rgba(43,55,73,0.14) 15%, rgba(43,55,73,0.14) 85%, transparent);"></span>
+  <span style="position:absolute; right:11px; top:18%; height:26%; width:1px; z-index:0; pointer-events:none; background:rgba(255,255,255,0.35);"></span>
   
   <!-- 一道竖直划痕（胶片擦痕，贯穿全卷） -->
   <span style="position:absolute; top:0; bottom:0; left:16%; width:1px; z-index:0; background:rgba(58,74,98,0.07);"></span>
@@ -152,7 +161,7 @@ description: 极乐迪斯科 24 人格风格对话。用户输入 `Disco:on` \ `
   <div style="position:relative; z-index:1; margin:14px 0 0; display:flex; align-items:baseline; gap:8px;">
   <span style="font-size:12px; letter-spacing:0.3em; opacity:0.55; color:#7b857ab9;">REVACHOL&nbsp;·&nbsp;’51</span>
   <span style="flex:1;"></span>
-  <span style="font-family:'Edwardian Script ITC','French Script MT','Lucida Handwriting','Apple Chancery','Segoe Script','Brush Script MT',cursive; font-style:italic; font-size:26px; letter-spacing:0.04em; color:#3a4a62;">Inland&nbsp;Empire</span>
+  <span style="font-family:'Edwardian Script ITC','French Script MT','Lucida Handwriting','Apple Chancery','Segoe Script','Brush Script MT',cursive; font-style:italic; font-size:26px; letter-spacing:0.04em; color:#3a4a62; margin-right:10px;">Inland&nbsp;Empire</span>
   </div>
 </div>
 ```

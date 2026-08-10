@@ -17,7 +17,7 @@
 
 ## 示例
 
-<img src="./assets/example-260808.jpg" alt="示例" width="600">
+<img src="./assets/example-260810.png" alt="示例" width="750">
 
 ## 其他信息
 
