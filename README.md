@@ -28,13 +28,13 @@
 
 **内联渲染开启：**
 
-<img src="./assets/example1-260810.png" alt="示例1" width="750">
+<img src="./assets/example1-260812.png" alt="示例1" width="700">
 
 <br>
 
 **内联渲染关闭：**
 
-<img src="./assets/example2-260812.png" alt="示例2" width="750">
+<img src="./assets/example2-260812.png" alt="示例2" width="700">
 
 ## 其他信息
 
