@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="./assets/la cravate.png" alt="Logo" width="120"><br>
+  <img src="./assets/la cravate.png" alt="Logo" width="145"><br>
   <h1 align="center">Disco Elysium 24 *Skills*</h1>
 </p>
 
 <p align="center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
   <img src="https://img.shields.io/badge/Release-v0.6.0-green.svg" alt="Release">
-  <img src="https://img.shields.io/badge/Platform-Codex%2FTrae%20Work%2FKimi%20Work-lightgrey.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/Platform-Codex%2FTrae%2FKimi%2FWB-lightgrey.svg" alt="Platform">
 </p>
 
 <p align="center"><em>"The furies are at home, in the mirror;<br>it is their address.<br>Even the clearest water,<br>if deep enough can drown."<br>-- R. S. Thomas</em></p>
