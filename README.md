@@ -1,7 +1,14 @@
-# 极乐迪斯科 24 Personalities Skill
+<p align="center">
+  <img src="./assets/la cravate.png" alt="Logo" width="120">
+</p>
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE) [![Release](https://img.shields.io/badge/Release-v0.5.0-green.svg)]()
+<h1 align="center"> Disco Elysium 24 *Skills* </h1>
 
+<hr style="height:1px; background:#e1e4e8; border:none;">
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE) 
+[![Release](https://img.shields.io/badge/Release-v0.6.0-green.svg)]()
+[![Platform](https://img.shields.io/badge/Platform-Codex%2FTrae%20Work%2FKimi%20Work-lightgrey.svg)]()
 
 > *"The furies are at home, in the mirror;<br>
 > it is their address.<br>
