@@ -1,23 +1,6 @@
 <p align="center">
   <img src="./assets/la cravate.png" alt="Logo" width="120"><br>
-  <svg width="680" height="90" viewBox="0 0 680 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Disco Elysium 24 Skills">
-    <defs>
-      <linearGradient id="sunset" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#c99a5f"/>
-        <stop offset="55%" stop-color="#8b3a3a"/>
-        <stop offset="100%" stop-color="#16213e"/>
-      </linearGradient>
-      <filter id="de-shadow" x="-10%" y="-10%" width="120%" height="120%">
-        <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#0f0f1a" flood-opacity="0.5"/>
-      </filter>
-      <style>@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&amp;display=swap');</style>
-    </defs>
-    <text x="340" y="58" text-anchor="middle"
-          font-family="'Cinzel', 'Trajan Pro', 'Times New Roman', serif"
-          font-size="38" font-weight="700" letter-spacing="1.5"
-          fill="url(#sunset)" filter="url(#de-shadow)">Disco Elysium 24 *Skills*</text>
-    <line x1="130" y1="74" x2="550" y2="74" stroke="#b8b8d0" stroke-width="1" opacity="0.55"/>
-  </svg>
+  <h1 align="center">Disco Elysium 24 *Skills*</h1>
 </p>
 
 <p align="center">
