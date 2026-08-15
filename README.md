@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/badge/Platform-Codex%2FTrae%2FKimi%2FWB-lightgrey.svg" alt="Platform">
 </p>
 
-<p align="center"><em>"The furies are at home, in the mirror;<br>it is their address.<br>Even the clearest water,<br>if deep enough can drown."<br>-- R. S. Thomas</em></p>
+<p align="center"><em>"Never think to surprise them.<br>Your face approaching ever so friendly<br>is the white flag they ignore."<br>-- R. S. Thomas</em></p>
 
 ## 简介
 
