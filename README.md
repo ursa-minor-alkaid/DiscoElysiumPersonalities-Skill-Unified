@@ -25,21 +25,29 @@
 - `disco:on`/`disco on`：开启该 skill，默认不开启内联渲染
   - skill 会保持开启直到用户明确要求关闭
 - `html:on`/`html on`：开启内联渲染，样式见下
+  - 开启内联渲染会大幅减慢响应速度，请酌情考虑开启
+  - 不同 Agent 客户端对内联渲染的支出不同，html 规范也不同，如果无法正常显示，请关闭该功能
 
 ## 示例
 
 **内联渲染开启：**
 
-<img src="./assets/example1-260812.png" alt="示例1" width="700">
+<p align="center">
+  <img src="./assets/example1-260812.png" alt="示例1" width="700">
+</p>
 
 <br>
 
 **内联渲染关闭：**
 
-<img src="./assets/example2-260812.png" alt="示例2" width="700">
+<p align="center">
+  <img src="./assets/example2-260812.png" alt="示例2" width="700">
+</p>
 
 ## 其他信息
 
 - 类似 SKILL：[disco-elysium](https://github.com/liigoQi/disco-elysium)
 - `scripts` 文件夹下脚本用于提取并分类24个人格的语料，生成 `references` 文件夹下的相应文件内的语料
 - 未来更新计划详见[ROADMAP](./ROADMAP.md)
+
+
