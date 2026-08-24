@@ -28,6 +28,11 @@
   - 开启内联渲染会大幅减慢响应速度，请酌情考虑开启
   - 不同 Agent 客户端对内联渲染的支出不同，html 规范也不同，如果无法正常显示，请关闭该功能
 
+**⭐️推荐使用**
+
+- 推荐使用 Agent 能力较强的模型，部分模型可能无法按要求读取相关模板文件
+- 不同 Agent 客户端表现能力不同，关闭内联渲染的情况下表现较为稳定
+
 ## 示例
 
 **⭐️内联渲染开启：**
@@ -46,8 +51,8 @@
 
 ## 其他信息
 
-- 类似 SKILL：[disco-elysium](https://github.com/liigoQi/disco-elysium)
+- 类似 SKILL：详见 [disco-elysium](https://github.com/liigoQi/disco-elysium)
 - `scripts` 文件夹下脚本用于提取并分类24个人格的语料，生成 `references` 文件夹下的相应文件内的语料
-- 未来更新计划详见[ROADMAP](./ROADMAP.md)
+- 未来更新计划详见 [ROADMAP](./ROADMAP.md)
 
 
