@@ -14,7 +14,9 @@
 
 1. **每个人格一个 `<div>`**：选中的 1~2 个人格各用一个独立的 `<div>`；`</div>` 后，使用 `<br>` 空一行，再接下一个人格的 `<div>` 或正常回答。
 2. **配色**：每个 `<div>` 的颜色直接取 references 对应文件"参数信息"里的十六进制值——背景统一 `#232323cb`，字体使用 `#e8e8e8`，正文色用 `--de-text` 的值，强调色用 `--de-accent` 的值，**直接写进 style**，生成时必须替换。
-3. **头部**：左侧技能名写人格中文名**繁体字（只有这里使用繁体，其他均使用简体）**，右侧徽标按**成功/失败判定**写 `成功/失败 · 简单/困难`。
+3. **头部**：
+   1. 左侧技能名写人格中文名，
+   2. 右侧徽标按**成功/失败判定**写 `成功/失败 · 简单/困难`
 4. **正文**：
    1. **写1~3句话都可**，语气贴近 `references/` 中的参考原文。
    2. <important><b>减少如下口癖：</b></important>
@@ -50,13 +52,13 @@
 
 ---
 
-**完整模板**（复制使用，替换示例文字与颜色即可）：
-
 <important>
 
-必须严格按照下方的 html 模板输出内容，不得私自更改样式！
+<b>必须严格依照该模板输出，不得有修改或省略！</b>
 
 </important>
+
+**完整模板**（复制使用，替换示例文字与颜色即可）：
 
 ```html
 <meta charset="utf-8">
@@ -74,8 +76,6 @@
          装饰也会被裁切在框内、不会溢出。 -->
 
 <style>
-@font-face{font-family:'Iansui';src:url('https://cdn.jsdelivr.net/gh/ButTaiwan/iansui@main/fonts/ttf/Iansui-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap;}
-
 :root{
   --de-text:{见上};
   --de-front:{见上};
@@ -123,7 +123,7 @@
   <div style="position:relative; z-index:1; display:flex; align-items:center; gap:10px; margin:0 0 14px;">
 
   <span style="font-size:10px; color:var(--de-front);">◆</span>
-  <span style="font-family:'Iansui','Source Han Serif SC','Noto Serif CJK SC','Songti SC','SimSun',serif; font-size:19px; font-weight:bold; letter-spacing:0.28em; color:var(--de-front); white-space:nowrap;">內陸帝國</span>
+  <span style="font-family:'Kaiti SC','STKaiti','KaiTi','FangSong','STFangsong','Source Han Serif SC','Songti SC','SimSun',serif; font-size:19px; font-weight:bold; letter-spacing:0.28em; color:var(--de-front); white-space:nowrap;">內陸帝國</span>
 
   <!-- 检定徽标：印章做旧风格 -->
   <span style="position:relative; display:inline-block; white-space:nowrap; flex-shrink:0; align-self:center; margin-left:100px; font-family:'Times New Roman', Times, serif; font-weight:600; font-size:13px; letter-spacing:.2em; color:var(--de-front); border:2px solid var(--de-front); border-radius:4px; padding:4px 10px; transform:rotate(6deg); opacity:.85; mask-image:url('data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27120%27%20height=%2740%27%3E%3Cfilter%20id=%27r%27%3E%3CfeTurbulence%20baseFrequency=%270.6%27%20numOctaves=%272%27/%3E%3CfeColorMatrix%20values=%270%200%200%200%201%200%200%200%200%201%200%200%200%200%201%200%200%200%200.8%200.2%27/%3E%3C/filter%3E%3Crect%20width=%27120%27%20height=%2740%27%20filter=%27url(%23r)%27/%3E%3C/svg%3E');">简单&nbsp;·&nbsp;成功</span>
